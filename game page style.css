@@ -1,0 +1,41 @@
+body{
+	background-image: url(space.png);
+}
+#ship{
+	width: 50px;
+	height: 50px;
+}
+
+#htp {
+	font-size: 25px;
+	text-decoration: underline;
+	color: white;
+}
+
+p{
+	font-size: 20px;
+	text-align: left;
+    color: white;
+}
+
+#websitename{
+	color: white;
+}
+
+#first{
+	color: white;
+}
+
+iframe{
+	border: 0px;
+    margin: 0px;
+    padding: 0px;
+	float: left;
+	padding-bottom: 50px;
+	padding-left: 50px;
+ 
+}
+
+.paragraph{
+	float: left;
+}

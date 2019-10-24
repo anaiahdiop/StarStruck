@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>HTML5 Canvas Shooter Game Tutorial Part 1</title>
+<script>
+<div id="count"></div>
+<iframe name="ifrm" id="ifrm" src="http://www.jasdev.co.uk" width="90%" height="90%"></iframe>
+
+<script type="text/javascript">
+
+var i = 0;
+var urls = new Array();
+urls[0] = 'http://www.bbc.co.uk';
+urls[1] = 'http://www.bigfanta.com';
+urls[2] = 'http://www.bigtango.com';
+urls[3] = 'http://www.jasdev.co.uk';
+
+next();
+
+function next() {
+if ( window.frames["ifrm"] )  {
+window.frames["ifrm"].location = urls[i];
+}
+setTimeout("next()",3000);
+i++;
+document.getElementById("count").innerHTML = i+' of '+urls.length;
+}
+</script>
+
+</head>
+
+<body>
+  <canvas id="canvas" width="600" height="600"></canvas>
+</body>
+</html>

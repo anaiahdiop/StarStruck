@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<img id="myImg" src="rocket.gif">
+<script type="text/javascript">
+
+function getMouseCoords(e) {
+  var e = e || window.event;
+  document.getElementById('msg').innerHTML = e.clientX + ', ' + 
+           e.clientY + '<br>' + e.screenX + ', ' + e.screenY;
+}
+
+
+var followCursor = (function() {
+  var r = document.getElementById("myImg").src;
+  r.style.position = 'absolute';
+  
+
+  return {
+    init: function() {
+      document.body.appendChild(r);
+    },
+
+    run: function(e) {
+      var e = e || window.event;
+      r.style.left  = (e.clientX - 5) + 'px';
+      r.style.top = (e.clientY - 5) + 'px';
+      getMouseCoords(e);
+    }
+  };
+}());
+
+window.onload = function() {
+  followCursor.init();
+  document.body.onmousemove = followCursor.run;
+}
+
+</script>
+
+<div id="msg" style="width: 1000px; height: 1000px; border: 1px solid blue;"></div>
+</body>
+</html>
+ 
